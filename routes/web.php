@@ -29,3 +29,8 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 //Route::middleware(['web', 'auth', 'admin'])->prefix('/admin')->group(function () {
     //Routes
 //});
+
+// Login Admin Routes...
+Route::get('admin/login', 'Admin\LoginController@showLoginForm')->name('admin.login');
+Route::post('admin/login', 'Admin\LoginController@login');
+Route::post('admin/logout', 'Admin\LoginController@logout')->name('admin.logout');

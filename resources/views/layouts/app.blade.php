@@ -51,7 +51,11 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    @admin
+                                        <strong>{{ Auth::user()->name }} </strong> <span class="caret"></span> (Admin)
+                                    @else
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    @endadmin
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

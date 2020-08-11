@@ -30,16 +30,12 @@ abstract class TestCase extends BaseTestCase
         return $this->actingAs($user);
     }
 
-    protected function createAdmin(){
-        return factory(Admin::class)->create([
-            //'admin' => true
-        ]);
+    protected function createAdmin(array $attributes = []){
+        return factory(Admin::class)->create($attributes);
     }
 
-    protected function createUser(){
-        return factory(User::class)->create([
-            //'admin' => false
-        ]);
+    protected function createUser(array $attributes = []){
+        return factory(User::class)->create($attributes);
     }
 
     /**
